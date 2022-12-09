@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="SumSubtractTests" verbose="1">
+    <test name="SumSubtractTests">
+        <packages>
+            <package name="com.epam.tc.hw1.sum_subtract"/>
+        </packages>
+    </test>
+
+</suite>
