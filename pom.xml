@@ -88,13 +88,13 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.xml.file>sum_subtract.xml</suite.xml.file>
+                <suite.xml.file>sumSubtract.xml</suite.xml.file>
             </properties>
         </profile>
         <profile>
             <id>MultDivide</id>
             <properties>
-                <suite.xml.file>mult_divide.xml</suite.xml.file>
+                <suite.xml.file>multDivide.xml</suite.xml.file>
             </properties>
         </profile>
         <profile>

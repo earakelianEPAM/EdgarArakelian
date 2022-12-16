@@ -1,10 +1,9 @@
-package com.epam.tc.hw1.mult_divide;
-
-import com.epam.tc.hw1.Abstract;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+package com.epam.tc.hw1;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class DivideTest extends Abstract {
 
@@ -22,5 +21,6 @@ public class DivideTest extends Abstract {
     public void divDDtTest(double a, double b, double res) {
         var act = calculator.div(a, b);
         assertThat(res).as("Wrong calculation").isEqualTo(act);
+
     }
 }

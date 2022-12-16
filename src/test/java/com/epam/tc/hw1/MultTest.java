@@ -1,10 +1,10 @@
-package com.epam.tc.hw1.mult_divide;
+package com.epam.tc.hw1;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 import com.epam.tc.hw1.Abstract;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class MultTest extends Abstract {
 

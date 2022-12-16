@@ -3,8 +3,7 @@
 <suite name="AllTests" verbose="1" >
     <test name="AllTests" >
         <packages>
-            <package name="com.epam.tc.hw1.mult_divide"/>
-            <package name="com.epam.tc.hw1.sum_subtract"/>
+            <package name="com.epam.tc.hw1"></package>
         </packages>
     </test>
 
