@@ -3,8 +3,8 @@
 <suite name="hw2AllTests" verbose="1" >
     <test name="hw2AllTests" >
         <classes>
-            <class name="com.epam.tc.hw2.Ex1"></class>
-            <class name="com.epam.tc.hw2.Ex2"></class>
+            <class name="com.epam.tc.hw2.ExerciseOne"></class>
+            <class name="com.epam.tc.hw2.ExerciseTwo"></class>
         </classes>
     </test>
 
