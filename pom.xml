@@ -92,12 +92,12 @@
 
     <profiles>
         <profile>
-            <id>HW2</id>
+            <id>hw3</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.xml.file>hw2AllTests.xml</suite.xml.file>
+                <suite.xml.file>hw3Alltests.xml</suite.xml.file>
             </properties>
         </profile>
         <profile>
