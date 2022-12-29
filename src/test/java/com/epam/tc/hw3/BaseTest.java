@@ -9,7 +9,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
-
 public class BaseTest {
     static WebDriver driver;
     protected static final int IMPLICIT_WAIT = 5;
@@ -19,7 +18,6 @@ public class BaseTest {
     }
 
     private static final String URL = "https://jdi-testing.github.io/jdi-light/index.html";
-
 
     @BeforeSuite
     public static void setupWebDriverManager() {

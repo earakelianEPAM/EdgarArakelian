@@ -9,10 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.GetCredentials;
 
-
 public class Header {
     //for tests1-4
-    public static String homePageTitle = "Home Page";
+    public static final String HOME_PAGE_TITLE = "Home Page";
     @FindBy(id = "user-icon")
     private WebElement loginElement;
     @FindBy(id = "name")
@@ -22,7 +21,7 @@ public class Header {
     private WebElement userNameElement;
     //for test5
     @FindBy(xpath = "//ul[@class=\"uui-navigation nav navbar-nav m-l8\"]/li/a")
-    public List<WebElement> headerLocators;
+    private List<WebElement> headerLocators;
     public static List<String> headerNamesExpected = List.of("HOME", "CONTACT FORM", "SERVICE",
             "METALS & COLORS");
     //for ex.2 test5
@@ -30,10 +29,8 @@ public class Header {
     private WebElement serviceElement;
     public static String diffElementsMenuItem = "DIFFERENT ELEMENTS";
     @FindBy(partialLinkText = "DIFFERENT ELEMENTS")
-    public static WebElement differentElements;
-
-    public static String diffElementsTitle = "Different Elements";
-
+    private WebElement differentElements;
+    public static final String DIFF_ELEMENTS_TITLE = "Different Elements";
 
     public Header(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -46,11 +43,11 @@ public class Header {
         usernameId.sendKeys(getCredentials.getLogin(), Keys.TAB, getCredentials.getPassword(), Keys.ENTER);
     }
 
-    public String romanLogged() {
+    public String getUsernameIsLogged() {
         return userNameElement.getText();
     }
 
-    public List<String> itemsInHeader() {
+    public List<String> getItemsTextInHeader() {
         List<String> itemsHeaderNames = new ArrayList<>();
         for (WebElement i : headerLocators) {
             itemsHeaderNames.add(i.getText());
@@ -65,5 +62,4 @@ public class Header {
     public void clickDiffElements() {
         differentElements.click();
     }
-
 }
