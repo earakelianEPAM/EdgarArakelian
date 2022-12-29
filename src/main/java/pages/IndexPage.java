@@ -16,10 +16,10 @@ public class IndexPage {
         @FindBy(css = ".icon-multi"),
         @FindBy(css = ".icon-base")
     })
-    public static List<WebElement> indexPageImages;
+    private List<WebElement> indexPageImages;
     // for test 7
     @FindBy(className = "benefit-txt")
-    public List<WebElement> textElement;
+    private List<WebElement> textElement;
     public static List<String> expectedText = List.of(
             //1
             "To include good practices\n"
@@ -46,11 +46,11 @@ public class IndexPage {
         PageFactory.initElements(driver, this);
     }
 
-    public List<WebElement> imagesDisplayed() {
+    public List<WebElement> getImagesDisplayed() {
         return indexPageImages;
     }
 
-    public List<String> textUnderImages() {
+    public List<String> getTextUnderImages() {
         List<String> actualText = new ArrayList<>();
         for (WebElement i : textElement) {
             actualText.add(i.getText());
@@ -58,11 +58,11 @@ public class IndexPage {
         return actualText;
     }
 
-    public WebElement frameElement() {
+    public WebElement getFrameElement() {
         return frameElement;
     }
 
-    public WebElement frameButton() {
+    public WebElement getFrameButton() {
         return frameButton;
     }
 }
