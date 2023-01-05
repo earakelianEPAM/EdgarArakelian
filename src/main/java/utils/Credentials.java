@@ -4,11 +4,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class GetCredentials {
+public class Credentials {
+
     private String username;
     private String password;
+    private String path = "src/test/resources/userCredentials";
 
-    public GetCredentials() {
+    public Credentials() {
     }
 
     private void getCredentials() {
@@ -17,18 +19,16 @@ public class GetCredentials {
         Properties property = new Properties();
 
         try {
-            fileInputStream = new FileInputStream("src/test/resources/userCredentials");
+            fileInputStream = new FileInputStream(path);
             property.load(fileInputStream);
 
             username = property.getProperty("userLogin");
             password = property.getProperty("userPassword");
-
+            fileInputStream.close();
 
         } catch (IOException e) {
             System.err.println("Error, file is not found");
         }
-
-
     }
 
     public String getLogin() {

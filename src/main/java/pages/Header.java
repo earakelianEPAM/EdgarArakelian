@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.GetCredentials;
+import utils.Credentials;
 
 public class Header {
     //for tests1-4
@@ -19,6 +19,7 @@ public class Header {
     public static String userNameLogged = "ROMAN IOVLEV";
     @FindBy(id = "user-name")
     private static WebElement userNameElement;
+    public static String userNameLoggedExpected = "ROMAN IOVLEV";
     //for test5
     @FindBy(xpath = "//ul[@class=\"uui-navigation nav navbar-nav m-l8\"]/li/a")
     private List<WebElement> headerLocators;
@@ -37,7 +38,7 @@ public class Header {
     }
 
     public static void loginToPage() {
-        GetCredentials getCredentials = new GetCredentials();
+        Credentials getCredentials = new Credentials();
         loginElement.click();
         usernameId.click();
         usernameId.sendKeys(getCredentials.getLogin(), Keys.TAB, getCredentials.getPassword(), Keys.ENTER);

@@ -12,12 +12,11 @@ import org.testng.annotations.BeforeSuite;
 public class BaseTest {
     public static WebDriver driver;
     public static final int IMPLICIT_WAIT = 5;
+    private static final String URL = "https://jdi-testing.github.io/jdi-light/index.html";
 
     public static String getURL() {
         return URL;
     }
-
-    private static final String URL = "https://jdi-testing.github.io/jdi-light/index.html";
 
     @BeforeSuite
     public static void setupWebDriverManager() {

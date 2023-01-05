@@ -6,6 +6,7 @@ import static pages.Header.DIFF_ELEMENTS_TITLE;
 import static pages.Header.HOME_PAGE_TITLE;
 import static pages.Header.headerNamesExpected;
 import static pages.Header.userNameLogged;
+import static pages.Header.userNameLoggedExpected;
 import static pages.IndexPage.expectedText;
 import static pages.LeftSection.names;
 
@@ -20,7 +21,7 @@ import pages.LeftSection;
 
 public class AssertStep extends PageObject {
     SoftAssert softAssert = new SoftAssert();
-    private static final String iFrameElement = "frame";
+    private static final String I_FRAME_ELEMENT = "frame";
 
     public AssertStep(WebDriver driver) {
         super(driver);
@@ -33,14 +34,13 @@ public class AssertStep extends PageObject {
 
     @Step("Assert login")
     public void assertLogin() {
-        assertThat(userNameLogged).as("Wrong username is logged").isEqualTo("ROMAN IOVLEV");
+        assertThat(userNameLogged).as("Wrong username is logged").isEqualTo(userNameLoggedExpected);
         softAssert.assertAll();
     }
 
     @Step("Assert login (failed)")
     public void assertLoginFailed() {
         assertThat(userNameLogged).as("Wrong username is logged").isEqualTo("ROMAN IOVLEVV");
-        softAssert.assertAll();
     }
 
     @Step("Assert 4 items in the header section with proper text")
@@ -54,6 +54,7 @@ public class AssertStep extends PageObject {
         indexPage = new IndexPage(driver);
         for (WebElement i : indexPage.getImagesDisplayed()) {
             softAssert.assertTrue(i.isDisplayed());
+            softAssert.assertAll();
         }
     }
 
@@ -73,7 +74,7 @@ public class AssertStep extends PageObject {
     @Step("Frame Button exists, Switch to the iframe and check that there is “Frame Button")
     public void assertButtonInFrame() {
         indexPage = new IndexPage(driver);
-        driver.switchTo().frame(iFrameElement);
+        driver.switchTo().frame(I_FRAME_ELEMENT);
         assertThat(indexPage.getFrameButton().isDisplayed());
     }
 
@@ -92,8 +93,8 @@ public class AssertStep extends PageObject {
     @Step("Clicking checkboxes and assert checkboxes are ticked")
     public void assertCheckboxes() {
         diffElementsPage = new DiffElementsPage(driver);
-        softAssert.assertTrue(diffElementsPage.selectWaterCheckbox().isSelected());
-        softAssert.assertTrue(diffElementsPage.selectWindCheckbox().isSelected());
+        assertThat(diffElementsPage.selectWaterCheckbox().isSelected());
+        assertThat(diffElementsPage.selectWindCheckbox().isSelected());
     }
 
     @Step("Selecting selen radiobutton")
@@ -117,6 +118,5 @@ public class AssertStep extends PageObject {
         assertThat(diffElementsPage.getWindCheckboxLog().isDisplayed());
         assertThat(diffElementsPage.getMetalRadiobuttonLog().isDisplayed());
         assertThat(diffElementsPage.getColorsDropdownLog().isDisplayed());
-        softAssert.assertAll();
     }
 }
