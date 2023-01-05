@@ -125,7 +125,17 @@
                 <suite.xml.file>hw4AllTests.xml</suite.xml.file>
             </properties>
         </profile>
+        <profile>
+            <id>MultDivide</id>
+            <properties>
+                <suite.xml.file>multDivide.xml</suite.xml.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>AllTests</id>
+            <properties>
+                <suite.xml.file>allTests.xml</suite.xml.file>
+            </properties>
+        </profile>
     </profiles>
-
-
 </project>
