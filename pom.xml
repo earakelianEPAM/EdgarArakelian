@@ -11,8 +11,15 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <aspectj_version>1.9.5</aspectj_version>
+        <aspectj_version>1.9.5</aspectj_version>
+        <maven-compiler-plugin>3.8.0</maven-compiler-plugin>
+        <maven-surefire-plugin>3.0.0-M5</maven-surefire-plugin>
+        <testng>7.3.0</testng>
+        <assertj-core>3.4.1</assertj-core>
+        <cucumber.java.version>7.10.1</cucumber.java.version>
+        <cucumber.testng.version>7.10.1</cucumber.testng.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>calculator</groupId>
@@ -44,6 +51,16 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.java.version}</version>
         </dependency>
     </dependencies>
     <build>
