@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class LeftSection {
     //for test 11
     @FindBy(xpath = "//div[@id=\"mCSB_1_container\"]/ul/li/a")
