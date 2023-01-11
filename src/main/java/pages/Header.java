@@ -37,11 +37,11 @@ public class Header {
         PageFactory.initElements(driver, this);
     }
 
-    public static void loginToPage() {
-        Credentials getCredentials = new Credentials();
+    public void loginToPage() {
+        Credentials instance = Credentials.getCredentials();
         loginElement.click();
         usernameId.click();
-        usernameId.sendKeys(getCredentials.getLogin(), Keys.TAB, getCredentials.getPassword(), Keys.ENTER);
+        usernameId.sendKeys(instance.username, Keys.TAB, instance.password, Keys.ENTER);
     }
 
     public static String getUsernameIsLogged() {

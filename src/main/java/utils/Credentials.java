@@ -6,15 +6,12 @@ import java.util.Properties;
 
 public class Credentials {
 
-    private String username;
-    private String password;
+    public String username;
+    public String password;
     private String path = "src/test/resources/userCredentials";
+    private static final Credentials instance = new Credentials();
 
-    public Credentials() {
-    }
-
-    private void getCredentials() {
-
+    private Credentials() {
         FileInputStream fileInputStream;
         Properties property = new Properties();
 
@@ -22,8 +19,8 @@ public class Credentials {
             fileInputStream = new FileInputStream(path);
             property.load(fileInputStream);
 
-            username = property.getProperty("userLogin");
-            password = property.getProperty("userPassword");
+            this.username = property.getProperty("userLogin");
+            this.password = property.getProperty("userPassword");
             fileInputStream.close();
 
         } catch (IOException e) {
@@ -31,13 +28,7 @@ public class Credentials {
         }
     }
 
-    public String getLogin() {
-        getCredentials();
-        return username;
-    }
-
-    public String getPassword() {
-        getCredentials();
-        return password;
+    public static Credentials getCredentials() {
+        return instance;
     }
 }

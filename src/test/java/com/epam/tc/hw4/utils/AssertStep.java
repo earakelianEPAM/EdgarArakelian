@@ -22,6 +22,7 @@ import pages.LeftSection;
 public class AssertStep extends PageObject {
     SoftAssert softAssert = new SoftAssert();
     private static final String I_FRAME_ELEMENT = "frame";
+    private static final String userNameFailedTest = "ROMAN IOVLEVV";
 
     public AssertStep(WebDriver driver) {
         super(driver);
@@ -40,7 +41,7 @@ public class AssertStep extends PageObject {
 
     @Step("Assert login (failed)")
     public void assertLoginFailed() {
-        assertThat(userNameLogged).as("Wrong username is logged").isEqualTo("ROMAN IOVLEVV");
+        assertThat(userNameLogged).as("Wrong username is logged").isEqualTo(userNameFailedTest);
     }
 
     @Step("Assert 4 items in the header section with proper text")
@@ -54,8 +55,8 @@ public class AssertStep extends PageObject {
         indexPage = new IndexPage(driver);
         for (WebElement i : indexPage.getImagesDisplayed()) {
             softAssert.assertTrue(i.isDisplayed());
-            softAssert.assertAll();
         }
+        softAssert.assertAll();
     }
 
     @Step("Assert 4 texts on the Index Page under icons")
