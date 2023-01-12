@@ -43,17 +43,12 @@ public class UserTablePageSteps {
 
         userTablePage = new UserTablePage(webDriver);
         for (List<String> row : rowsWithoutHeader) {
-            //Getting expected values
             int expextedNumber = Integer.parseInt(row.get(0));
             String expectedName = row.get(1);
             String expectedDescription = row.get(2);
-
-            //Verifying the Number row
             assertEquals(Integer.parseInt(userTablePage.getRowItem(expextedNumber, "NUMBER").getText()),
                     expextedNumber);
-            //Verifying the User row
             assertEquals(userTablePage.getRowItem(expextedNumber, "USER").getText(), expectedName);
-            //Verifying the Description row
             assertEquals(userTablePage.getRowItem(expextedNumber, "DESCRIPTION").getText().replaceAll("[\\n]", " "),
                     expectedDescription);
         }
@@ -61,18 +56,15 @@ public class UserTablePageSteps {
 
     @Then("droplist should contain values in column Type for user Roman")
     public void checkDropDown(DataTable dataTable) {
-        //Extracting the data from the table in cucumber .feature file
         List<List<String>> rows = dataTable.asLists(String.class);
         List<List<String>> rowsWithoutHeader = new ArrayList<>(rows);
         rowsWithoutHeader.remove(0);
 
-        //Processing expected values
         List<String> expectedValues = new ArrayList<>();
         for (List<String> row : rowsWithoutHeader) {
             expectedValues.add(row.get(0));
         }
 
-        //Processing actual values
         userTablePage = new UserTablePage(webDriver);
         List<WebElement> dropDownElements = userTablePage.getDropdownValues(1);
         List<String> actualValues = new ArrayList<>();
@@ -80,7 +72,6 @@ public class UserTablePageSteps {
             actualValues.add(option.getText());
         }
 
-        //Verifying the dropdown values
         assertEquals(actualValues.size(), expectedValues.size());
         for (int i = 0; i < actualValues.size(); i++) {
             assertEquals(actualValues.get(i), expectedValues.get(i));

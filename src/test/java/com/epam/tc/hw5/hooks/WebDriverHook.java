@@ -10,15 +10,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverHook {
     private WebDriver driver;
+    public static final int IMPLICIT_WAIT = 10;
 
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(IMPLICIT_WAIT, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(IMPLICIT_WAIT, TimeUnit.SECONDS);
 
         TestContext.getInstance().setObject(TestContext.WEB_DRIVER, driver);
     }

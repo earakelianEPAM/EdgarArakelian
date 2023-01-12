@@ -13,6 +13,7 @@ public class UserData {
         try {
             fileInputStream = new FileInputStream(filePath);
             credentials.load(fileInputStream);
+            fileInputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

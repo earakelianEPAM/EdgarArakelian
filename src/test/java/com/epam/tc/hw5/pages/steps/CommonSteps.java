@@ -14,7 +14,7 @@ public class CommonSteps {
         new HomePage(webDriver).openPageUrl();
     }
 
-    @Given("I login as user \"Roman Iovlev\"")
+    @Given("I login as user with userCredentials")
     public void signIn() {
         new HomePage(webDriver).userAccountMenu.authorizeUser();
     }

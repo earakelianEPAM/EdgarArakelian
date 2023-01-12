@@ -4,7 +4,7 @@ Feature: Different Elements Page logging feature
 
 
     Given I open JDI GitHub site
-    And I login as user "Roman Iovlev"
+    And I login as user with userCredentials
     And I click on 'Service' button in Header
     And I click on 'Different Elements' button in Service dropdown
 

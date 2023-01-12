@@ -9,13 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class UserTablePage extends BasePage {
-
     public LogArea logArea;
+    public String url = "https://jdi-testing.github.io/jdi-light/user-table.html";
 
     public UserTablePage(WebDriver webDriver) {
         super(webDriver);
         this.logArea = new LogArea(webDriver);
-        this.url = "https://jdi-testing.github.io/jdi-light/user-table.html";
     }
 
     //Table columns

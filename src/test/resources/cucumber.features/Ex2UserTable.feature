@@ -2,7 +2,7 @@ Feature: User Table
 
   Scenario: User Table Page test
     Given I open JDI GitHub site
-    And I login as user "Roman Iovlev"
+    And I login as user with userCredentials
     When I click on "Service" button in Header
     And I click on "User Table" button in Service dropdown
     Then 'User Table' page should be opened

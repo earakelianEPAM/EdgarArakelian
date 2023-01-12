@@ -5,33 +5,30 @@ import com.epam.tc.hw5.pages.sections.LogArea;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.DiffElementsPage;
 
 public class DifferentElementsPage extends BasePage {
 
     public LogArea logArea;
 
+    public String url = "https://jdi-testing.github.io/jdi-light/different-elements.html";
+    @FindBy(xpath = "//label[text()[contains(., ' Water')]]/*[@type='checkbox']")
+    public WebElement waterCheckbox;
+    @FindBy(xpath = "//label[text()[contains(., ' Wind')]]/*[@type='checkbox']")
+    public WebElement windCheckbox;
+    @FindBy(xpath = "//label[text()[contains(., ' Selen')]]/*[@type='radio']")
+    public WebElement selenRadioButton;
+    @FindBy(xpath = "//option[text()='Yellow']")
+    public WebElement yellowSelectorOption;
+
     public DifferentElementsPage(WebDriver webDriver) {
         super(webDriver);
         this.logArea = new LogArea(webDriver);
-        this.url = "https://jdi-testing.github.io/jdi-light/different-elements.html";
     }
 
-    //CheckBoxes
-    @FindBy(css = "div>label.label-checkbox:nth-child(1)>input")
-    public WebElement waterCheckbox;
-    @FindBy(css = "div>label.label-checkbox:nth-child(3)>input")
-    public WebElement windCheckbox;
-
-    //RadioButtons
-    @FindBy(css = "div.main-content-hg>div.checkbox-row:nth-child(3)>label:nth-child(4)>input")
-    public WebElement selenRadioButton;
-
-    //Selector options
-    @FindBy(css = "div.main-content-hg>div.colors>select.uui-form-element>option:nth-child(4)")
-    public WebElement yellowSelectorOption;
-
-
     public void selectCheckBox(String checkBoxName) {
+/*        windCheckbox.click();
+        waterCheckbox.click();*/
         if (checkBoxName.equalsIgnoreCase("WIND")) {
             windCheckbox.click();
         } else if (checkBoxName.equalsIgnoreCase("WATER")) {
@@ -39,6 +36,7 @@ public class DifferentElementsPage extends BasePage {
         } else {
             System.out.println("Failed to find checkbox " + checkBoxName);
         }
+
     }
 
     public void selectRadioButton(String radioButtonName) {
