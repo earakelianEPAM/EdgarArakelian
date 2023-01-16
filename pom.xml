@@ -17,6 +17,7 @@
         <maven-surefire-plugin>3.0.0-M5</maven-surefire-plugin>
         <testng>7.3.0</testng>
         <assertj-core>3.4.1</assertj-core>
+        <jdi-light.version>1.4.7</jdi-light.version>
     </properties>
     <dependencies>
         <dependency>
@@ -58,6 +59,18 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.3.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-light</artifactId>
+            <version>1.4.6</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-light-html</artifactId>
+            <version>1.4.6</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -82,6 +95,11 @@
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
                         <version>1.9.5</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.epam.jdi</groupId>
+                        <artifactId>jdi-light</artifactId>
+                        <version>${jdi-light.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
