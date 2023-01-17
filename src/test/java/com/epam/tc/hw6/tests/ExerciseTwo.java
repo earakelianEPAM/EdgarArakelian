@@ -10,8 +10,8 @@ import org.testng.annotations.Test;
 @Feature("Different elements page")
 @Story("Check opening diff elements page, choosing options, logpanel")
 public class ExerciseTwo extends BaseTest{
-    ActionStep actionStep;
-    AssertStep assertStep;
+    ActionStep actionStep = new ActionStep(driver);
+    AssertStep assertStep = new AssertStep(driver);
 
     @Test(priority = 1)
     @Description("Test Home Page")
@@ -66,8 +66,8 @@ public class ExerciseTwo extends BaseTest{
     }
 
     @Test(priority = 7)
-    @Description("Verify logpanel")
-    public void verifyLogpanel() {
+    @Description("Verify logpanel contains selected elements")
+    public void verifyLogpanelIsMatchedSelectedElements() {
         assertStep = new AssertStep(driver);
         assertStep.assertLogpanel();
     }

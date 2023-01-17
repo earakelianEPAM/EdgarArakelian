@@ -1,6 +1,7 @@
 package com.epam.tc.hw6.utilsHw6;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
@@ -11,6 +12,7 @@ import pages.LeftSection;
 
 import static com.epam.tc.hw6.tests.BaseTest.driver;
 import static org.assertj.core.api.Assertions.assertThat;
+import static pages.DiffElementsPage.selectedElementsInLogPanel;
 import static pages.Header.*;
 import static pages.Header.DIFF_ELEMENTS_TITLE;
 import static pages.IndexPage.expectedText;
@@ -42,7 +44,7 @@ public class AssertStep extends PageObject{
     }
 
     @Step("Assert 4 images on the index page")
-    public void assertImages() {
+    public void assertImageIsDisplayed() {
         indexPage = new IndexPage(driver);
         for (WebElement i : indexPage.getImagesDisplayed()) {
             softAssert.assertTrue(i.isDisplayed());
@@ -84,8 +86,9 @@ public class AssertStep extends PageObject{
     @Step("Clicking checkboxes and assert checkboxes are ticked")
     public void assertCheckboxes() {
         diffElementsPage = new DiffElementsPage(driver);
-        assertThat(diffElementsPage.selectWaterCheckbox().isSelected());
-        assertThat(diffElementsPage.selectWindCheckbox().isSelected());
+        softAssert.assertTrue(diffElementsPage.waterCheckbox.isSelected());
+        softAssert.assertTrue(diffElementsPage.windCheckbox.isSelected());
+        softAssert.assertAll();
     }
 
     @Step("Selecting selen radiobutton")
@@ -104,11 +107,10 @@ public class AssertStep extends PageObject{
 
     @Step("Check logpanel text")
     public void assertLogpanel() {
-        diffElementsPage = new DiffElementsPage(driver);
-        assertThat(diffElementsPage.getWaterCheckboxLog().isDisplayed());
-        assertThat(diffElementsPage.getWindCheckboxLog().isDisplayed());
-        assertThat(diffElementsPage.getMetalRadiobuttonLog().isDisplayed());
-        assertThat(diffElementsPage.getColorsDropdownLog().isDisplayed());
+       diffElementsPage = new DiffElementsPage(driver);
+        for(String i: selectedElementsInLogPanel) {
+            softAssert.assertTrue(driver.findElement(By.xpath( "//*[contains(text(),'" + i + "')]")).isDisplayed());
+        }
+        softAssert.assertAll();
     }
-
 }
