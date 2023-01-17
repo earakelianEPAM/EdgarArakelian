@@ -17,6 +17,8 @@
         <maven-surefire-plugin>3.0.0-M5</maven-surefire-plugin>
         <testng>7.3.0</testng>
         <assertj-core>3.4.1</assertj-core>
+        <cucumber.java.version>7.10.1</cucumber.java.version>
+        <cucumber.testng.version>7.10.1</cucumber.testng.version>
     </properties>
     <dependencies>
         <dependency>
@@ -54,6 +56,16 @@
             <version>3.141.59</version>
         </dependency>
         <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.java.version}</version>
+            </dependency>
+            <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.3.1</version>
