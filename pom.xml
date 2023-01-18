@@ -23,6 +23,8 @@
         <webdrivermanager.version>5.3.1</webdrivermanager.version>
         <aspectjweaver.version>1.9.5</aspectjweaver.version>
         <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
+        <cucumber.java.version>7.10.1</cucumber.java.version>
+        <cucumber.testng.version>7.10.1</cucumber.testng.version>
     </properties>
     <dependencies>
         <dependency>
@@ -60,6 +62,16 @@
             <version>${selenium-java.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.java.version}</version>
+            </dependency>
+            <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
