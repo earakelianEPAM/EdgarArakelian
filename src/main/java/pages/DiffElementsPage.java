@@ -1,16 +1,21 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class DiffElementsPage {
+    //protected WebDriver driver;
+
     //for ex.2 test 6
     @FindBy(xpath = "//label[text()[contains(., ' Water')]]/*[@type='checkbox']")
-    private WebElement waterCheckbox;
+    public WebElement waterCheckbox;
     @FindBy(xpath = "//label[text()[contains(., ' Wind')]]/*[@type='checkbox']")
-    private WebElement windCheckbox;
+    public WebElement windCheckbox;
     //for ex.2 test 7
     @FindBy(xpath = "//label[text()[contains(., ' Selen')]]/*[@type='radio']")
     private WebElement selenRadioButton;
@@ -20,7 +25,9 @@ public class DiffElementsPage {
     @FindBy(xpath = "//option[text()='Yellow']")
     private WebElement yellowDropdownElement;
     //for ex. 2 test 9
-    @FindBy(xpath = "//*[contains(text(),'Water: condition changed to true')]")
+    public static List<String> selectedElementsInLogPanel = List.of("Water", "Wind", "Selen", "Yellow");
+
+    @FindBy(xpath = "//*[contains(text(),'Water:')] condition changed to true')]")
     private WebElement waterCheckboxLog;
     @FindBy(xpath = "//*[contains(text(),'Wind: condition changed to true')]")
     private WebElement windCheckboxLog;
