@@ -23,6 +23,14 @@
         <lombok.version>1.18.24</lombok.version>
         <selenium-java.version>3.141.59</selenium-java.version>
         <webdrivermanager.version>5.3.1</webdrivermanager.version>
+        <lombok.version>1.18.24</lombok.version>
+        <allure-testng.version>2.20.1</allure-testng.version>
+        <selenium-java.version>3.141.59</selenium-java.version>
+        <webdrivermanager.version>5.3.1</webdrivermanager.version>
+        <aspectjweaver.version>1.9.5</aspectjweaver.version>
+        <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
+        <cucumber.java.version>7.10.1</cucumber.java.version>
+        <cucumber.testng.version>7.10.1</cucumber.testng.version>
     </properties>
     <dependencies>
         <dependency>
@@ -60,6 +68,16 @@
             <version>${selenium-java.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.java.version}</version>
+            </dependency>
+            <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
@@ -99,14 +117,14 @@
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>1.9.5</version>
+                        <version>${aspectjweaver.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>${maven-checkstyle-plugin.version}</version>
                 <configuration>
                     <configLocation>
                         https://raw.githubusercontent.com/DmitryKhodakovsky/epam-training-center-code-checkers-configurations/main/checkstyle/checkstyle.xml
