@@ -43,4 +43,5 @@ public class MetalsAndColorsForm extends Form<MetalsAndColorsDataItem> {
     public void submit() {
         submitButton.click();
     }
+
 }

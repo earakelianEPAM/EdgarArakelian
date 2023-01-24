@@ -20,12 +20,12 @@ public class JdiMetalsAndColorsPage extends WebPage {
     public void fillMetalsAndColorsForm(MetalsAndColorsDataItem data) {
         metalsAndColorsForm.summaryOdd.select(data.getSummaryOdd());
         metalsAndColorsForm.summaryEven.select(data.getSummaryEven());
-        metalsAndColorsForm.elements.select(data.elements);
-        metalsAndColorsForm.colors.select(data.color);
-        metalsAndColorsForm.metals.select(data.metals);
+        metalsAndColorsForm.elements.select(data.getElements());
+        metalsAndColorsForm.colors.select(data.getColor());
+        metalsAndColorsForm.metals.select(data.getMetals());
 
         metalsAndColorsForm.vegetables.expand();
-        metalsAndColorsForm.vegetables.select(data.vegetables);
+        metalsAndColorsForm.vegetables.select(data.getVegetables());
     }
 
     public void submitMetalAndColorForm() {
