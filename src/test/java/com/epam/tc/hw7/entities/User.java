@@ -1,7 +1,8 @@
 package com.epam.tc.hw7.entities;
 
 public class User {
-    public static final User Roman = new User("Roman", "Jdi1234", "ROMAN IOVLEV");
+    public static final User ROMAN = new User("Roman", "Jdi1234", "ROMAN IOVLEV");
+
     private String name;
     private String password;
     private String fullName;

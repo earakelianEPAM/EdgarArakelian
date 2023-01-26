@@ -27,8 +27,6 @@ public class DifferentElementsPage extends BasePage {
     }
 
     public void selectCheckBox(String checkBoxName) {
-/*        windCheckbox.click();
-        waterCheckbox.click();*/
         if (checkBoxName.equalsIgnoreCase("WIND")) {
             windCheckbox.click();
         } else if (checkBoxName.equalsIgnoreCase("WATER")) {

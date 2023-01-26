@@ -3,7 +3,7 @@
 <suite name="hw7Tests" verbose="1" >
     <test name="hw7Tests" >
         <classes>
-            <class name="com.epam.tc.hw7.tests.JdiSiteTest"/>
+            <class name="com.epam.tc.hw7.tests.JdiTest"/>
         </classes>
     </test>
 

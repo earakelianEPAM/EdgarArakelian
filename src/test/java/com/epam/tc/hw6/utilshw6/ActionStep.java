@@ -1,4 +1,8 @@
-package com.epam.tc.hw6.utilsHw6;
+package com.epam.tc.hw6.utilshw6;
+
+import static com.epam.tc.hw6.tests.BaseTest.IMPLICIT_WAIT;
+import static com.epam.tc.hw6.tests.BaseTest.driver;
+import static pages.Header.diffElementsMenuItem;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -7,14 +11,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Header;
 
-import static com.epam.tc.hw6.tests.BaseTest.IMPLICIT_WAIT;
-import static com.epam.tc.hw6.tests.BaseTest.driver;
-import static pages.Header.diffElementsMenuItem;
-
 public class ActionStep extends PageObject {
     public ActionStep(WebDriver driver) {
         super(driver);
     }
+
     @Step("Login to the Index Page")
     public void loginToIndexPage() {
         header.loginToPage();

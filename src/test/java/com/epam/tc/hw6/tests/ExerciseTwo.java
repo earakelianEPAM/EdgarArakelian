@@ -1,7 +1,7 @@
 package com.epam.tc.hw6.tests;
 
-import com.epam.tc.hw6.utilsHw6.ActionStep;
-import com.epam.tc.hw6.utilsHw6.AssertStep;
+import com.epam.tc.hw6.utilshw6.ActionStep;
+import com.epam.tc.hw6.utilshw6.AssertStep;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 @Feature("Different elements page")
 @Story("Check opening diff elements page, choosing options, logpanel")
-public class ExerciseTwo extends BaseTest{
+public class ExerciseTwo extends BaseTest {
     ActionStep actionStep = new ActionStep(driver);
     AssertStep assertStep = new AssertStep(driver);
 
