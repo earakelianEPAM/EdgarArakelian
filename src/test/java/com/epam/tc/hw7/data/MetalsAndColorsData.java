@@ -67,4 +67,3 @@ public class MetalsAndColorsData {
         return String.join(", ", vegetables);
     }
 }
-

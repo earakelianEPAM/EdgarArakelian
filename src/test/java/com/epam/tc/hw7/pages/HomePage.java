@@ -10,8 +10,10 @@ import com.epam.jdi.light.elements.pageobjects.annotations.locators.XPath;
 import com.epam.jdi.light.ui.html.elements.common.Button;
 import com.epam.jdi.light.ui.html.elements.common.Icon;
 import com.epam.jdi.light.ui.html.elements.common.Link;
+import com.epam.jdi.light.ui.html.elements.common.TextField;
 import com.epam.tc.hw7.entities.User;
 import com.epam.tc.hw7.forms.LoginForm;
+import org.openqa.selenium.Keys;
 
 @Url("index.html")
 @Title("Home page")
@@ -36,12 +38,16 @@ public class HomePage extends WebPage {
         loginForm.login(user);
     }
 
+    public String getUserName() {
+        return userName.getText();
+    }
+
+    public void checkUserLoggedIn(User user) {
+        userName.is().text(user.getFullName());
+    }
+
     public void logout() {
         userIcon.click();
         logOutButton.click();
-    }
-
-    public String getUserName() {
-        return userName.getText();
     }
 }

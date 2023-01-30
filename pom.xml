@@ -153,12 +153,12 @@
     </build>
     <profiles>
         <profile>
-            <id>hw7AllTests</id>
+            <id>hw7Tests</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.xml.file>hw7AllTests.xml</suite.xml.file>
+                <suite.xml.file>hw7Tests.xml</suite.xml.file>
             </properties>
         </profile>
         <profile>

@@ -9,8 +9,7 @@ import com.epam.jdi.light.elements.init.PageFactory;
 import com.epam.tc.hw7.JdiSite;
 import com.epam.tc.hw7.data.DataProviderForTest;
 import com.epam.tc.hw7.data.MetalsAndColorsData;
-import com.epam.tc.hw7.entities.User;
-import org.testng.Assert;
+import com.epam.tc.hw7.data.UserData;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -29,10 +28,10 @@ public class JdiTest {
 
     @Test(dataProvider = "MetalsAndColors", dataProviderClass = DataProviderForTest.class)
     public void loginTest(MetalsAndColorsData metalsAndColorsData) {
+
         JdiSite.open();
-        homePage.login(User.ROMAN);
-        String actualFullName = homePage.getUserName();
-        Assert.assertEquals(actualFullName, User.ROMAN.getFullName());
+        homePage.login(UserData.ROMAN);
+        homePage.checkUserLoggedIn(UserData.ROMAN);
         metalsAndColorsHeader.click();
         metalsAndColorsPage.checkOpened();
 

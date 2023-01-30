@@ -32,5 +32,4 @@ public class MetalsAndColorsPage extends WebPage {
                 metalsAndColorsPage.resultsList.stream().map(Label::getText).collect(Collectors.toList());
         Assert.assertEquals(results, metalsAndColorsData.expectedResultList());
     }
-
 }
