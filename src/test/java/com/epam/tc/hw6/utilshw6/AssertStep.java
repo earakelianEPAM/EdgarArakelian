@@ -1,4 +1,15 @@
-package com.epam.tc.hw6.utilsHw6;
+package com.epam.tc.hw6.utilshw6;
+
+import static com.epam.tc.hw6.tests.BaseTest.driver;
+import static org.assertj.core.api.Assertions.assertThat;
+import static pages.DiffElementsPage.selectedElementsInLogPanel;
+import static pages.Header.DIFF_ELEMENTS_TITLE;
+import static pages.Header.HOME_PAGE_TITLE;
+import static pages.Header.headerNamesExpected;
+import static pages.Header.userNameLogged;
+import static pages.Header.userNameLoggedExpected;
+import static pages.IndexPage.expectedText;
+import static pages.LeftSection.names;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -10,15 +21,7 @@ import pages.Header;
 import pages.IndexPage;
 import pages.LeftSection;
 
-import static com.epam.tc.hw6.tests.BaseTest.driver;
-import static org.assertj.core.api.Assertions.assertThat;
-import static pages.DiffElementsPage.selectedElementsInLogPanel;
-import static pages.Header.*;
-import static pages.Header.DIFF_ELEMENTS_TITLE;
-import static pages.IndexPage.expectedText;
-import static pages.LeftSection.names;
-
-public class AssertStep extends PageObject{
+public class AssertStep extends PageObject {
     SoftAssert softAssert = new SoftAssert();
     private static final String I_FRAME_ELEMENT = "frame";
 
@@ -107,9 +110,9 @@ public class AssertStep extends PageObject{
 
     @Step("Check logpanel text")
     public void assertLogpanel() {
-       diffElementsPage = new DiffElementsPage(driver);
-        for(String i: selectedElementsInLogPanel) {
-            softAssert.assertTrue(driver.findElement(By.xpath( "//*[contains(text(),'" + i + "')]")).isDisplayed());
+        diffElementsPage = new DiffElementsPage(driver);
+        for (String i : selectedElementsInLogPanel) {
+            softAssert.assertTrue(driver.findElement(By.xpath("//*[contains(text(),'" + i + "')]")).isDisplayed());
         }
         softAssert.assertAll();
     }

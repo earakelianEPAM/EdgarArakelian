@@ -1,4 +1,4 @@
-package com.epam.tc.hw6.utilsHw6;
+package com.epam.tc.hw6.utilshw6;
 
 import org.openqa.selenium.WebDriver;
 import pages.DiffElementsPage;

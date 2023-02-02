@@ -1,7 +1,7 @@
 package com.epam.tc.hw6.tests;
 
-import com.epam.tc.hw6.utilsHw6.ActionStep;
-import com.epam.tc.hw6.utilsHw6.AssertStep;
+import com.epam.tc.hw6.utilshw6.ActionStep;
+import com.epam.tc.hw6.utilshw6.AssertStep;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
